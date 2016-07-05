@@ -32,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
         testButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("T", "Successful Test");
-                Toast.makeText(getApplicationContext(), "Successful Test", Toast.LENGTH_SHORT).show();
 
                 StrictMode.ThreadPolicy policy =
                         new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -48,16 +46,13 @@ public class MainActivity extends AppCompatActivity {
                         (ConnectivityManager)getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
 
                 NetworkInfo networkInfo = cm.getActiveNetworkInfo();
-                Boolean networkConected = networkInfo.isConnected();
-
-                Log.d("NetworkInfo", networkConected.toString());
 
                 if (networkInfo != null && networkInfo.isConnected()) {
                     authKey = loginController.acquireKey(username, password);
                 }else{
-                    Toast.makeText(getApplicationContext(), "Network Failure", Toast.LENGTH_SHORT).show();
+                    Log.d("Network", "Failure to connect");
                 }
-                //Log.d("authKey ", authKey);
+                Log.d("authKey ", authKey);
             }
         });
 
