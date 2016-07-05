@@ -1,5 +1,6 @@
 package com.topicplaces.android.androidsnsapp.AndroidSNS;
 
+import com.topicplaces.android.androidsnsapp.AndroidSNS.Topics.TopicCreator;
 import com.topicplaces.android.androidsnsapp.AndroidSNS.Users.*;
 
 import java.io.IOException;
@@ -9,6 +10,12 @@ public class AndroidSNS{
 
     private String ENDPOINT;
 
+    /**
+     *
+     * Constructor for the SNSController.
+     *
+     * @param end The endpoint. ex. http://tse.topicplaces.com/api/2/
+     */
     public AndroidSNS(String end){
         ENDPOINT = end;
     }
@@ -47,11 +54,66 @@ public class AndroidSNS{
     }
 
 
+    /**
+     *
+     * Uses an HttpURLConect to obtain an authentication key from the endpoint.
+     *
+     * @param username The username you'll be obtaining an authkey for.
+     * @param password Password for the given username.
+     * @return The authentication key for the endpoint.
+     */
+
     public String acquireKey( String username, String password) {
         ensureConnection();
 
         RESTLogin logg = new RESTLogin(ENDPOINT);
         return logg.login( username, password );
     }
+
+    /**
+     *
+     * Creates a new public topic.
+     *
+     * @param title The title/name of the new Public Topic
+     * @param authkey The authentication key. See "acquireKey()"
+     * @return The ID code of the newly created topic (in format "t-[id]")
+     */
+
+    public String newPublicTopic(String title, String authkey)
+    {
+        ensureConnection();
+
+        TopicCreator tc = new TopicCreator( ENDPOINT );
+        String topicID = tc.createTopic(title, false, authkey);
+
+        if ( topicID.equals( "" ) )
+        {
+            System.err.println( "Unable to create new topic" );
+            return "";
+        }
+
+        return topicID;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
