@@ -1,4 +1,4 @@
-package com.topicplaces.android.androidsnsapp.AndroidSNS.Users;
+package com.topicplaces.android.AndroidSNS.Users;
 
 import java.io.IOException;
 import java.io.OutputStream;

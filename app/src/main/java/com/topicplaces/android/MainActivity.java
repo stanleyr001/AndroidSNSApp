@@ -1,4 +1,4 @@
-package com.topicplaces.android.androidsnsapp;
+package com.topicplaces.android;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -10,7 +10,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.topicplaces.android.androidsnsapp.AndroidSNS.AndroidSNS;
+import com.topicplaces.android.AndroidSNS.AndroidSNS;
+import com.topicplaces.android.androidsnsapp.R;
 
 public class MainActivity extends AppCompatActivity {
 

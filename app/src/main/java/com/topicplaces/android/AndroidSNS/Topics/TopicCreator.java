@@ -1,7 +1,7 @@
-package com.topicplaces.android.androidsnsapp.AndroidSNS.Topics;
+package com.topicplaces.android.AndroidSNS.Topics;
 
 
-import com.topicplaces.android.androidsnsapp.AndroidSNS.RESTCalls.Post;
+import com.topicplaces.android.AndroidSNS.RESTCalls.Post;
 
 import org.json.JSONException;
 import org.json.JSONObject;

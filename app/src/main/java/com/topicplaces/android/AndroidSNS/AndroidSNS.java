@@ -1,7 +1,7 @@
-package com.topicplaces.android.androidsnsapp.AndroidSNS;
+package com.topicplaces.android.AndroidSNS;
 
-import com.topicplaces.android.androidsnsapp.AndroidSNS.Topics.TopicCreator;
-import com.topicplaces.android.androidsnsapp.AndroidSNS.Users.*;
+import com.topicplaces.android.AndroidSNS.Topics.TopicCreator;
+import com.topicplaces.android.AndroidSNS.Users.*;
 
 import java.io.IOException;
 import java.net.*;
