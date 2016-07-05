@@ -1,6 +1,6 @@
 package com.topicplaces.android.androidsnsapp.AndroidSNS;
 
-import com.topicplaces.android.androidsnsapp.AndroidSNS.Users.RESTLogin;
+import com.topicplaces.android.androidsnsapp.AndroidSNS.Users.*;
 
 import java.io.IOException;
 import java.net.*;
@@ -8,6 +8,11 @@ import java.net.*;
 public class AndroidSNS{
 
     private String ENDPOINT;
+
+    public AndroidSNS(String end){
+        ENDPOINT = end;
+    }
+    //ENDPOINT will be set to http://tse.topicplaces.com/api/2/
 
     /**
      *
